@@ -15,7 +15,7 @@ public class UploadController {
 	@RequestMapping(value="/uploadfile", method = RequestMethod.POST)
 	public @ResponseBody String upload(MultipartFile file){
 		try{
-			FileUtils.writeByteArrayToFile(new File("C:/upload/" + file.getOriginalFilename()), file.getBytes());
+			FileUtils.writeByteArrayToFile(new File("C:/tools/upload/" + file.getOriginalFilename()), file.getBytes());
 			System.out.println("上传完成");
 			return "ok";
 		}catch(IOException e){
