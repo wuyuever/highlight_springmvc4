@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ExceptionHandlerAdvice {
 	@ExceptionHandler(value=Exception.class)
 	public ModelAndView exception(Exception exception, WebRequest request){
-		ModelAndView modelAndView = new ModelAndView("error");
+		ModelAndView modelAndView = new ModelAndView("/error");
 		modelAndView.addObject("errorMessage", exception.getMessage());
 		return modelAndView;
 	}
